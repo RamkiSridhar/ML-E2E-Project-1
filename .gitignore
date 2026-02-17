@@ -1,5 +1,6 @@
 ml-e2e-1/
 /venv/
+/artifacts/
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
