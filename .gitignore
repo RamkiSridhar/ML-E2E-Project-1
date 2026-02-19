@@ -1,6 +1,8 @@
 ml-e2e-1/
+catboost_info
+.vscode/
 /venv/
-/artifacts/
+# /artifacts/
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]

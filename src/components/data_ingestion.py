@@ -10,6 +10,9 @@ from dataclasses import dataclass
 from src.components.data_transformation import DataTransformation
 from src.components.data_transformation import DataTransformationConfig
 
+from src.components.model_trainer import ModelTrainer
+from src.components.model_trainer import ModelTrainerConfig
+
 @dataclass
 class DataIngestionConfig:
     train_data_path: str= os.path.join('artifacts', 'train.csv')
@@ -46,7 +49,12 @@ class DataIngestion:
             raise CustomException(e, sys)
 
 if __name__ == '__main__':
+
     obj = DataIngestion()
     train_data, test_data = obj.initiate_data_ingestion()
+
     data_tranformation_obj = DataTransformation()
-    data_tranformation_obj.inititate_data_transformation(train_data, test_data)
+    train_arr, test_arr, temp_file_path = data_tranformation_obj.inititate_data_transformation(train_data, test_data) #Remove the temp_file_path later. #Remove in inititate_data_transformation return statement if possible.
+
+    model_trainer_obj = ModelTrainer()
+    print(model_trainer_obj.initiate_model_trainer(train_arr, test_arr))
