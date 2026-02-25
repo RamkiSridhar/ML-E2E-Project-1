@@ -29,7 +29,7 @@ class DataIngestion:
             df = pd.read_csv('notebooks\data\StudPerf.csv')
             logging.info("Read the dataset as dataframe.")
 
-            os.makedirs(os.path.dirname(self.ingestion_config.train_data_path), exist_ok= True)
+            os.makedirs(os.path.dirname(self.ingestion_config.train_data_path), exist_ok= True) #Add existokay= True 
 
             df.to_csv(self.ingestion_config.raw_data_path, index= False, header= True)
 

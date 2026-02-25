@@ -28,8 +28,8 @@ class DataTransformation:
         :param self: Description
         '''
         try:
-            numerical_columns= ['reading score', 'writing score']
-            categorical_columns = ['gender', 'race/ethnicity', 'parental level of education', 'lunch', 'test preparation course']
+            numerical_columns= ['reading_score', 'writing_score']
+            categorical_columns = ['gender', 'race_ethnicity', 'parental_level_of_education', 'lunch', 'test_preparation_course']
 
             num_pipeline = Pipeline(
                 steps= [
@@ -74,8 +74,8 @@ class DataTransformation:
             logging.info("Obtaining preprocessor object.")
 
             preprocessor_obj = self.get_data_transformer_object()
-            target_column = 'math score'
-            numerical_columns= ['reading score', 'writing score']
+            target_column = 'math_score'
+            numerical_columns= ['reading_score', 'writing_score']
 
             input_feature_train_df = train_df.drop(columns=[target_column], axis= 1)
             target_feature_train_df = train_df[target_column]

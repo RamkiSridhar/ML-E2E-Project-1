@@ -1,5 +1,6 @@
 ml-e2e-1/
-catboost_info
+catboost_info/
+notebooks\catboost_info
 .vscode/
 /venv/
 # /artifacts/
