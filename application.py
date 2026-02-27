@@ -8,12 +8,10 @@ from src.pipelines.predict_pipeline import CustomData, PredictPipeline
 application = Flask(__name__)
 app = application
 
-#Load model once here:
-predict_pipeline = PredictPipeline()
-
 #Route for a homepage:
 @app.route('/')
 def index():
+    predict_pipeline = PredictPipeline()    #Load model once here to check
     return render_template('index.html')
 
 @app.route('/predictdata', methods= ['GET', 'POST'])
