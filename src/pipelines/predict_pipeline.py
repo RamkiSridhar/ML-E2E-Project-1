@@ -26,7 +26,7 @@ class PredictPipeline:
 
 class CustomData:       #Used to map the data given as input in the HTML fields with the fields in the backend. 
     def __init__(
-            self, gender: str, race_ethnicity: str, parental_level_of_education, lunch: str, test_preparation_course: str, 
+            self, gender: str, race_ethnicity: str, parental_level_of_education: str, lunch: str, test_preparation_course: str, 
             reading_score: int, writing_score: int):
         
         self.gender = gender
