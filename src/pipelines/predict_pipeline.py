@@ -11,13 +11,18 @@ class PredictPipeline:
 
     def predict(self, features):
         try:
+            print("Predict method reached")
             BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-            model_path = os.path.join(BASE_DIR, "artifacts", "model.pkl")
-            preprocessor_path = os.path.join(BASE_DIR, "artifacts", "preprocessor.pkl")
+            model_path = "artifacts/model.pkl"
+            preprocessor_path = "artifacts/preprocessor.pkl"
             model = load_object(file_path= model_path)
+            print("model loaded")
             preprocessor = load_object(file_path= preprocessor_path)
+            print("preprocessor loaded")
             data_scaled = preprocessor.transform(features)
+            print("data transformed")
             preds = model.predict(data_scaled)
+            print("prediction done")
 
             return preds 
         
